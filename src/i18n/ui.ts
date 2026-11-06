@@ -13,7 +13,11 @@ export const ui = {
     'nav.skills': 'Compétences',
     'nav.contact': 'Contact',
     'nav.experience': 'Expérience',
-    'nav.studies': 'Études'
+    'nav.studies': 'Études',
+    'nav.label': 'Navigation',
+    'theme.toggle': 'Changer le thème',
+    'portfolio.title': 'Mon Portfolio',
+    'error.no-content': 'Aucun contenu disponible'
     
 
   },
@@ -24,7 +28,11 @@ export const ui = {
     'nav.skills': 'Skills',
     'nav.contact': 'Contact',
     'nav.experience': 'Experience',
-    'nav.studies': 'Studies'
+    'nav.studies': 'Studies',
+    'nav.label': 'Navigation',
+    'theme.toggle': 'Toggle theme',
+    'portfolio.title': 'My Portfolio',
+    'error.no-content': 'No content available'
   }
 } as const;
 
