@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, fontProviders } from 'astro/config';
 
 import vue from '@astrojs/vue';
 
@@ -16,6 +16,18 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: 'Bricolage Grotesque',
+      cssVariable: '--font-bricolage',
+      weights: ['200 800'],
+      styles: ['normal'],
+      subsets: ['latin'],
+      fallbacks: ['sans-serif']
+    }
+  ],
 
   vite: {
     plugins: [tailwindcss()]

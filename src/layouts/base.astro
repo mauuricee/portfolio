@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import { Font } from "astro:assets";
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getLang, useTranslations, locales } from "../i18n/ui";
 
@@ -38,6 +39,7 @@ const links = [
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{propGreeting}</title>
+    <Font cssVariable="--font-bricolage" preload />
 
     <script is:inline>
       // Applies theme before displaying the page so there is no flash of incorrect theme

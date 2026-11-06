@@ -7,6 +7,10 @@
   --color-primary-strong: var(--color-sky-700);
 }
 
+@theme inline {
+  --font-sans: var(--font-bricolage);
+}
+
 @layer base {
   ::selection { background-color: color-mix(in oklab, var(--color-primary) 30%, transparent); }
   :focus-visible { outline: 2px solid var(--color-primary-strong); outline-offset: 2px; }
