@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/base.astro';
+
+import { getLang, useTranslations } from '../i18n/ui';
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(getLang(Astro.currentLocale));
+---
+
+<Base greeting={t('greeting')}>
+    <section class="py-12">
+        <h1 class="text-5xl font-semibold tracking-tight text-balance">Hello World</h1>
+    </section>
+</Base>

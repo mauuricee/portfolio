@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+import { getRelativeLocaleUrl } from "astro:i18n";
+import { getLang, useTranslations, locales } from "../i18n/ui";
+
+const lang = getLang(Astro.currentLocale);
+const t = useTranslations(lang);
+
+interface Props {
+  greeting: string;
+}
+
+const greeting = t("greeting");
+const { greeting: propGreeting } = Astro.props;
+
+const segments = Astro.url.pathname.split("/").filter(Boolean);
+if (segments[0] === lang) segments.shift();
+const path = segments.join("/");
+
+const home = getRelativeLocaleUrl(lang, "/");
+const links = [
+  { href: `${home}#projects`, label: t("nav.projects") },
+  { href: `${home}#about`, label: t("nav.about") },
+  { href: `${home}#skills`, label: t("nav.skills") },
+  { href: `${home}#contact`, label: t("nav.contact") },
+  { href: `${home}#experience`, label: t("nav.experience") },
+  { href: `${home}#studies`, label: t("nav.studies") },
+];
+---
+
+<!--DOCTYPE html -->
+<html lang={lang}>
+  <head>
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{propGreeting}</title>
+
+    <script is:inline>
+      // Applies theme before displaying the page so there is no flash of incorrect theme
+      try {
+        const saved = localStorage.getItem("theme");
+        const systemDark = window.matchMedia(
+          "(prefers-color-scheme: dark)",
+        ).matches;
+        document.documentElement.classList.toggle(
+          "dark",
+          saved ? saved === "dark" : systemDark,
+        );
+      } catch {}
+    </script>
+  </head>
+  <body></body>
+</html>
