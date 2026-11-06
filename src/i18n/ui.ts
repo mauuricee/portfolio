@@ -7,10 +7,24 @@ export const defaultLocale = 'fr';
 
 export const ui = {
   fr: {
-    greeting: 'Bonjour'
+    'greeting': 'Bonjour',
+    'nav.projects': 'Projets',
+    'nav.about': 'À propos',
+    'nav.skills': 'Compétences',
+    'nav.contact': 'Contact',
+    'nav.experience': 'Expérience',
+    'nav.studies': 'Études'
+    
+
   },
   en: {
-    greeting: 'Hello'
+    'greeting': 'Hello',
+    'nav.projects': 'Projects',
+    'nav.about': 'About',
+    'nav.skills': 'Skills',
+    'nav.contact': 'Contact',
+    'nav.experience': 'Experience',
+    'nav.studies': 'Studies'
   }
 } as const;
 
