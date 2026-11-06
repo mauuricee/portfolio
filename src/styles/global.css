@@ -2,5 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+@theme {
+  --color-primary: var(--color-purple-500);
+  --color-primary-strong: var(--color-purple-600);
+}
+
+@layer base {
+  ::selection { background-color: color-mix(in oklab, var(--color-primary) 30%, transparent); }
+  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+  html { accent-color: var(--color-primary); }
+}
+
 html { color-scheme: light; }
 html.dark { color-scheme: dark; }
