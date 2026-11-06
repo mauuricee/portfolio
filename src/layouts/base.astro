@@ -28,7 +28,7 @@ const links = [
 ];
 ---
 
-<!--DOCTYPE html -->
+<!DOCTYPE html>
 <html lang={lang}>
   <head>
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
@@ -150,7 +150,7 @@ const links = [
         </div>
       </nav>
     </header>
-    <main id="contenu" class="mx-auto max-w-5xl px-6 py-16">
+    <main id="content" class="mx-auto max-w-5xl px-6 py-16">
       <slot>
         {t("error.no-content")}
       </slot>
@@ -158,5 +158,15 @@ const links = [
     <footer class="border-t border-black/5 dark:border-white/10">
 			<p class="mx-auto max-w-5xl px-6 py-8 text-sm opacity-60">© {new Date().getFullYear()} - Mounir BEKHDADI</p>
 		</footer>
+
+    <script>
+      // Applies selected theme and saves it on the browser
+      document.querySelector("#theme-toggle")?.addEventListener("click", () => {
+        const isDark = document.documentElement.classList.toggle("dark");
+        try {
+          localStorage.setItem("theme", isDark ? "dark" : "light");
+        } catch {}
+      });
+    </script>
   </body>
 </html>
