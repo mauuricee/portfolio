@@ -3,13 +3,14 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --color-primary: var(--color-purple-500);
-  --color-primary-strong: var(--color-purple-600);
+  --color-primary: var(--color-sky-400);
+  --color-primary-strong: var(--color-sky-700);
 }
 
 @layer base {
   ::selection { background-color: color-mix(in oklab, var(--color-primary) 30%, transparent); }
-  :focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+  :focus-visible { outline: 2px solid var(--color-primary-strong); outline-offset: 2px; }
+  .dark :focus-visible { outline-color: var(--color-primary); }
   html { accent-color: var(--color-primary); }
 }
 

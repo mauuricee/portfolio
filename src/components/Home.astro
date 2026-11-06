@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets';
 import Base from '../layouts/base.astro';
+import portrait from '../assets/portrait.png';
 
 import { getLang, useTranslations } from '../i18n/ui';
 
@@ -8,7 +10,25 @@ const t = useTranslations(getLang(Astro.currentLocale));
 ---
 
 <Base greeting={t('greeting')}>
-    <section class="py-12">
-        <h1 class="text-5xl font-semibold tracking-tight text-balance">Hello World</h1>
+    <section class="flex flex-col items-center gap-12 py-12 text-center">
+        <div class="relative aspect-square w-64 sm:w-80">
+            <svg class="absolute inset-0 size-full text-primary/60" viewBox="0 0 100 100" aria-hidden="true">
+                <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round" pathLength="360" stroke-dasharray="0.1 3.9" stroke-dashoffset="2" />
+            </svg>
+            <div class="absolute inset-[14%] rounded-full bg-primary/10">
+                <Image src={portrait} alt={t('hero.portrait')} loading="eager" fetchpriority="high" class="size-full dark:invert" />
+            </div>
+            <div class="absolute inset-[2%] animate-[spin_14s_linear_infinite] motion-reduce:animate-none" aria-hidden="true">
+                <span class="absolute top-0 left-1/2 size-4 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary shadow-lg shadow-primary/50"></span>
+            </div>
+        </div>
+
+        <div class="flex flex-col items-center gap-4">
+            <p class="text-sm font-medium tracking-wide text-primary-strong uppercase dark:text-primary">{t('hero.welcome')}</p>
+            <h1 class="text-5xl font-semibold tracking-tight text-balance sm:text-6xl">
+                {t('hero.hello')} <span class="text-primary-strong dark:text-primary">Mounir</span>
+            </h1>
+            <p class="max-w-prose text-lg text-pretty opacity-70">{t('hero.intro')}</p>
+        </div>
     </section>
 </Base>

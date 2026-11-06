@@ -17,8 +17,11 @@ export const ui = {
     'nav.label': 'Navigation',
     'theme.toggle': 'Changer le thème',
     'portfolio.title': 'Mon Portfolio',
-    'error.no-content': 'Aucun contenu disponible'
-    
+    'error.no-content': 'Aucun contenu disponible',
+    'hero.welcome': 'Bienvenue sur mon portfolio',
+    'hero.hello': 'Bonjour, je suis',
+    'hero.intro': 'Ravi de vous accueillir ici. Prenez le temps de découvrir mes projets, mon parcours et mes compétences.',
+    'hero.portrait': 'Illustration de mon visage'
 
   },
   en: {
@@ -32,7 +35,11 @@ export const ui = {
     'nav.label': 'Navigation',
     'theme.toggle': 'Toggle theme',
     'portfolio.title': 'My Portfolio',
-    'error.no-content': 'No content available'
+    'error.no-content': 'No content available',
+    'hero.welcome': 'Welcome to my portfolio',
+    'hero.hello': 'Hi, I’m',
+    'hero.intro': 'Glad to have you here. Take your time to explore my projects, my background and my skills.',
+    'hero.portrait': 'Illustration of my face'
   }
 } as const;
 
